@@ -11,7 +11,6 @@ Welcome to the Construct Modding API! This API allows developers to add custom p
 - UI Elements
 - Custom Pages
 - Contributing
-- License
 
 ---
 
@@ -124,7 +123,3 @@ Creating custom pages is straightforward with Coretex. This API allows you to dy
 ## Contributing
 
 To become a verified creator and have your mods featured, submit your mod to the [Luaq Discord Server](https://discord.gg/PPpVrxFsrc). Our team will review your submission for inclusion. Contributions are welcome, so feel free to fork the repository and create a pull request with your improvements.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
