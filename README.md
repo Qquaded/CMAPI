@@ -122,4 +122,4 @@ Creating custom pages is straightforward with Coretex. This API allows you to dy
 
 ## Contributing
 
-To become a verified creator and have your mods featured, submit your mod to the [Luaq Discord Server](https://discord.gg/PPpVrxFsrc). Our team will review your submission for inclusion. Contributions are welcome, so feel free to fork the repository and create a pull request with your improvements.
+To become a verified creator and have your mods featured, submit your mod to the [Luaq Discord Server](https://discord.gg/PPpVrxFsrc). Verified creators gain the ability to create mods directly in-game, allowing for a more integrated and immersive development experience. Our team will review your submission for verification and inclusion. Contributions are welcome, so feel free to fork the repository and create a pull request with your improvements.
