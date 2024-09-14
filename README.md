@@ -17,32 +17,33 @@ Welcome to the Construct Modding API! This API allows developers to add custom p
 
 ## Getting Started
 
-To get started, clone this repository and ensure you have all the necessary libraries and dependencies installed within your project.
+To get started, create a Lua script in Roblox Studio or a notes application. Begin by getting all the necessary services:
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 
-After a brief initialization wait (task.wait(3)), the required libraries are loaded.
+-- Initialization wait
+task.wait(3)
 
 ## Libraries
 
-The API uses several libraries that help create and manage features for the game. Here’s a list of the core libraries you can use:
+The API uses several libraries to help you create and manage features for the game:
 
 - **Signal**: Manages custom events and signals for interactive functionality.
-- **Lynx**: Helps with GUI creation and layout management.
-- **Logger**: Provides logging features for debugging purposes.
-- **LuaVoxel**: For voxel-based operations.
+- **Lynx**: Assists with GUI creation and layout management.
+- **Logger**: Provides logging features for debugging.
+- **LuaVoxel**: Handles voxel-based operations.
 - **Vyn**: Interacts with the game’s backend for various data operations.
-- **CMenu**: Helps create context-sensitive menus in the UI.
+- **CMenu**: Creates context-sensitive menus in the UI.
 - **Coretex**: Core framework for UI page creation.
-- **Textup/Textip**: For managing text input/output.
+- **Textup/Textip**: Manages text input/output.
 - **UIShadow**: Adds shadow effects to UI elements.
-- **Utilities**: General utilities that provide helper functions.
+- **Utilities**: Provides general helper functions.
 
 ## Example Script
 
-Here is a basic example of how to create a custom page in the Construct game:
+Here’s a basic example of how to create a custom page in the Construct game:
 
 return function(Holder: ScreenGui)
     local Signal = require(Libraries.Signal)
@@ -72,7 +73,7 @@ end
 
 ## Events and Signals
 
-You can fire and listen to custom events using the Signal library. Example:
+Use the Signal library to fire and listen to custom events. For example:
 
 Signal:fire("MainMenu", "NewButton", "Marketplace", "icon_id", function()
     -- Define behavior when the marketplace button is clicked
@@ -80,38 +81,35 @@ end)
 
 ## Using Vyn
 
-Vyn is a library that handles communication between the game and the backend, enabling data requests and updates. It can be used to fetch and send data like marketplace items, player inventories, and more.
+Vyn handles communication between the game and the backend, allowing for data requests and updates. Example usage:
 
-To use Vyn, fire events or listen to events from the backend.
+- Request marketplace items:
 
-Example for requesting marketplace items:
+    Vyn:Fire("Game", "GetMarketItems")
 
-Vyn:Fire("Game", "GetMarketItems")
+- Receive data from the backend:
 
-To receive data from the backend, use the **Listen** method:
-
-Vyn:Listen("Game", function(path, request, data)
-    if request == "GetMarketItems" then
-        for i, item in pairs(data) do
-            -- Handle each market item here
+    Vyn:Listen("Game", function(path, request, data)
+        if request == "GetMarketItems" then
+            for i, item in pairs(data) do
+                -- Handle each market item
+            end
         end
-    end
-end)
+    end)
 
-You can also use Vyn to trigger actions like getting datastores:
+- Trigger actions like buying items:
 
-Vyn:Fire("Game", "GetAllDatastores")
-
-This enables dynamic interaction with the game's backend, making it possible to retrieve and manipulate data based on your needs.
+    Vyn:Fire("Game", "BuyItem", itemID)
 
 ## UI Elements
 
-The API provides robust tools for UI creation using the Coretex library. Available elements include:
+The Coretex library provides tools for UI creation. Key elements include:
+
 - **Page**: Creates new UI pages.
 - **Title**: Adds titles to pages.
-- **Container**: Manages layout and organization of elements.
+- **Container**: Manages layout and organization.
 - **TextBox**: Custom input fields.
-- **Frame**: For custom framing of elements.
+- **Frame**: Frames elements.
 
 Example:
 
@@ -121,10 +119,12 @@ Title.Parent = Holder
 
 ## Custom Pages
 
-Creating custom pages is simple with the Coretex library. This API enables developers to dynamically add new content and features to Construct, including marketplaces, custom tools, and more.
-
-You can design unique features and interactions for players to enjoy by using the built-in UI libraries and connecting with game signals.
+Creating custom pages is straightforward with Coretex. This API allows you to dynamically add new content and features, such as marketplaces or custom tools.
 
 ## Contributing
 
-If you want to contribute to the API or suggest features, feel free to fork this repository and create a pull request.
+To become a verified creator and have your mods featured, submit your mod to the [Luaq Discord Server](https://discord.gg/PPpVrxFsrc). Our team will review your submission for inclusion. Contributions are welcome, so feel free to fork the repository and create a pull request with your improvements.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
